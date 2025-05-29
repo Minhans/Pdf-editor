@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online tools for image compression, PDF editing, image conversion, and adding signatures. Optimize your files quickly and easily.">
+    <meta name="keywords" content="image compressor, PDF editor, image converter, signature tool, online tools, file optimization">
+    <meta name="author" content="Your Company Name">
+    <title>All-in-One File Tool: Compress, Convert, Edit & Sign Files Online</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="All-in-One File Tool: Compress, Convert, Edit & Sign Files">
+    <meta property="og:description" content="Free online tools for image compression, PDF editing, image conversion, and adding signatures.">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/">
+    <meta property="twitter:title" content="All-in-One File Tool: Compress, Convert, Edit & Sign Files">
+    <meta property="twitter:description" content="Free online tools for image compression, PDF editing, image conversion, and adding signatures.">
+    <meta property="twitter:image" content="https://yourwebsite.com/preview-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourwebsite.com/" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34a853;
+            --accent-color: #ea4335;
+            --light-color: #f8f9fa;
+            --dark-color: #202124;
+            --gray-color: #5f6368;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--gray-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .ad-banner {
+            background-color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .tool-container {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-tabs {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .tool-tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--gray-color);
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tool-tab.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .tool-tab:hover:not(.active) {
+            background-color: #f8f9fa;
+        }
+        
+        .tool-content {
+            padding: 2rem;
+            display: none;
+        }
+        
+        .tool-content.active {
+            display: block;
+        }
+        
+        .tool-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: var(--border-radius);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .upload-area p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: #3367d6;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2d9249;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background-color: #d33426;
+        }
+        
+        .settings-panel {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .settings-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .preview-box {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .preview-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .file-info {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .file-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            color: #9aa0a6;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .tool-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tool-tab {
+                flex: 1;
+                text-align: center;
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+            
+            .preview-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="https://via.placeholder.com/40" alt="Logo">
+                <h1>FileTool Pro</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-banner">
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7384639868183712"
+                crossorigin="anonymous"></script>
+            <!-- Top Banner Ad -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-7384639868183712"
+                data-ad-slot="YOUR_AD_SLOT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- Main Tool Container -->
+        <div class="tool-container">
+            <div class="tool-tabs">
+                <div class="tool-tab active" data-tab="image-compressor">Image Compressor</div>
+                <div class="tool-tab" data-tab="pdf-editor">PDF Editor</div>
+                <div class="tool-tab" data-tab="image-converter">Image Converter</div>
+                <div class="tool-tab" data-tab="signature-tool">Signature Tool</div>
+            </div>
+            
+            <!-- Image Compressor Tab -->
+            <div class="tool-content active" id="image-compressor">
+                <h2 class="tool-title">Image Compressor</h2>
+                <p>Reduce your image file size without losing quality. Perfect for websites and social media.</p>
+                
+                <div class="upload-area" id="image-upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your images here or click to browse</p>
+                    <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+                    <button class="btn" onclick="document.getElementById('image-upload').click()">Select Images</button>
+                </div>
+                
+                <div class="settings-panel">
+                    <h3 class="settings-title">Compression Settings</h3>
+                    <div class="form-group">
+                        <label for="compression-level">Compression Level: <span id="compression-value">70</span>%</label>
+                        <input type="range" id="compression-level" min="0" max="100" value="70" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="image-format">Output Format:</label>
+                        <select id="image-format">
+                            <option value="original">Keep Original Format</option>
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WebP (Recommended)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image-quality">Quality (for JPEG/WebP): <span id="quality-value">80</span></label>
+                        <input type="range" id="image-quality" min="1" max="100" value="80" step="1">
+                    </div>
+                </div>
+                
+                <div id="image-preview-container" style="display: none;">
+                    <div class="preview-container">
+                        <div class="preview-box">
+                            <h3 class="preview-title">Original Image</h3>
+                            <div class="file-info" id="original-image-info"></div>
+                            <img id="original-image-preview" class="preview-image" src="" alt="Original Image">
+                        </div>
+                        <div class="preview-box">
+                            <h3 class="preview-title">Compressed Image</h3>
+                            <div class="file-info" id="compressed-image-info"></div>
+                            <img id="compressed-image-preview" class="preview-image" src="" alt="Compressed Image">
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="compress-another-btn">Compress Another Image</button>
+                        <button class="btn" id="download-compressed-btn">Download Compressed Image</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PDF Editor Tab -->
+            <div class="tool-content" id="pdf-editor">
+                <h2 class="tool-title">PDF Editor</h2>
+                <p>Edit your PDF files online. Merge, split, compress, and more.</p>
+                
+                <div class="upload-area" id="pdf-upload-area">
+                    <i class="fas fa-file-pdf"></i>
+                    <p>Drag & drop your PDF file here or click to browse</p>
+                    <input type="file" id="pdf-upload" accept=".pdf" style="display: none;">
+                    <button class="btn" onclick="document.getElementById('pdf-upload').click()">Select PDF</button>
+                </div>
+                
+                <div class="settings-panel" id="pdf-settings" style="display: none;">
+                    <h3 class="settings-title">PDF Editing Options</h3>
+                    <div class="form-group">
+                        <label for="pdf-action">Select Action:</label>
+                        <select id="pdf-action">
+                            <option value="compress">Compress PDF</option>
+                            <option value="merge">Merge PDFs</option>
+                            <option value="split">Split PDF</option>
+                            <option value="rotate">Rotate Pages</option>
+                            <option value="extract">Extract Pages</option>
+                        </select>
+                    </div>
+                    
+                    <div id="compress-options">
+                        <div class="form-group">
+                            <label for="pdf-compression-level">Compression Level:</label>
+                            <select id="pdf-compression-level">
+                                <option value="low">Low Compression (Better Quality)</option>
+                                <option value="medium" selected>Medium Compression (Recommended)</option>
+                                <option value="high">High Compression (Smaller File)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="merge-options" style="display: none;">
+                        <div class="form-group">
+                            <label>Upload additional PDFs to merge:</label>
+                            <input type="file" id="pdf-merge-files" accept=".pdf" multiple>
+                        </div>
+                    </div>
+                    
+                    <div id="split-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="split-page-range">Pages to extract (e.g., 1-3,5,7-9):</label>
+                            <input type="text" id="split-page-range" placeholder="1-3,5,7-9">
+                        </div>
+                    </div>
+                    
+                    <div id="rotate-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="rotate-degree">Rotation Degree:</label>
+                            <select id="rotate-degree">
+                                <option value="90">90° Clockwise</option>
+                                <option value="180">180°</option>
+                                <option value="270">90° Counter-Clockwise</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="rotate-page-range">Pages to rotate (e.g., 1,3-5):</label>
+                            <input type="text" id="rotate-page-range" placeholder="All pages">
+                        </div>
+                    </div>
+                    
+                    <div id="extract-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="extract-page-range">Pages to extract (e.g., 1,3-5):</label>
+                            <input type="text" id="extract-page-range" placeholder="1,3-5">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="pdf-preview-container" style="display: none;">
+                    <div class="preview-container">
+                        <div class="preview-box">
+                            <h3 class="preview-title">Original PDF</h3>
+                            <div class="file-info" id="original-pdf-info"></div>
+                            <iframe id="original-pdf-preview" class="preview-image" style="width: 100%; height: 500px; border: 1px solid #ddd;"></iframe>
+                        </div>
+                        <div class="preview-box" id="edited-pdf-box" style="display: none;">
+                            <h3 class="preview-title">Edited PDF</h3>
+                            <div class="file-info" id="edited-pdf-info"></div>
+                            <iframe id="edited-pdf-preview" class="preview-image" style="width: 100%; height: 500px; border: 1px solid #ddd;"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="edit-another-pdf-btn">Edit Another PDF</button>
+                        <button class="btn" id="download-edited-pdf-btn">Download Edited PDF</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Image Converter Tab -->
+            <div class="tool-content" id="image-converter">
+                <h2 class="tool-title">Image Converter</h2>
+                <p>Convert your images between different formats (JPG, PNG, WebP, etc.)</p>
+                
+                <div class="upload-area" id="convert-upload-area">
+                    <i class="fas fa-exchange-alt"></i>
+                    <p>Drag & drop your image here or click to browse</p>
+                    <input type="file" id="convert-upload" accept="image/*" style="display: none;">
+                    <button class="btn" onclick="document.getElementById('convert-upload').click()">Select Image</button>
+                </div>
+                
+                <div class="settings-panel" id="convert-settings" style="display: none;">
+                    <h3 class="settings-title">Conversion Settings</h3>
+                    <div class="form-group">
+                        <label for="target-format">Convert To:</label>
+                        <select id="target-format">
+                            <option value="jpeg">JPEG</option>
+                            <option value="png">PNG</option>
+                            <option value="webp">WebP</option>
+                            <option value="bmp">BMP</option>
+                            <option value="tiff">TIFF</option>
+                            <option value="gif">GIF</option>
+                        </select>
+                    </div>
+                    
+                    <div id="jpeg-options">
+                        <div class="form-group">
+                            <label for="jpeg-quality">JPEG Quality: <span id="jpeg-quality-value">80</span></label>
+                            <input type="range" id="jpeg-quality" min="1" max="100" value="80" step="1">
+                        </div>
+                    </div>
+                    
+                    <div id="png-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="png-compression">PNG Compression Level:</label>
+                            <select id="png-compression">
+                                <option value="0">No Compression (Fastest)</option>
+                                <option value="1">Fast</option>
+                                <option value="2" selected>Default</option>
+                                <option value="3">Good Compression</option>
+                                <option value="4">Best Compression (Slowest)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="webp-options" style="display: none;">
+                        <div class="form-group">
+                            <label for="webp-quality">WebP Quality: <span id="webp-quality-value">80</span></label>
+                            <input type="range" id="webp-quality" min="1" max="100" value="80" step="1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="convert-preview-container" style="display: none;">
+                    <div class="preview-container">
+                        <div class="preview-box">
+                            <h3 class="preview-title">Original Image</h3>
+                            <div class="file-info" id="original-convert-info"></div>
+                            <img id="original-convert-preview" class="preview-image" src="" alt="Original Image">
+                        </div>
+                        <div class="preview-box">
+                            <h3 class="preview-title">Converted Image</h3>
+                            <div class="file-info" id="converted-image-info"></div>
+                            <img id="converted-image-preview" class="preview-image" src="" alt="Converted Image">
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="convert-another-btn">Convert Another Image</button>
+                        <button class="btn" id="download-converted-btn">Download Converted Image</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signature Tool Tab -->
+            <div class="tool-content" id="signature-tool">
+                <h2 class="tool-title">Signature Tool</h2>
+                <p>Add your signature to documents and images.</p>
+                
+                <div class="upload-area" id="sign-upload-area">
+                    <i class="fas fa-signature"></i>
+                    <p>Drag & drop your document or image here or click to browse</p>
+                    <input type="file" id="sign-upload" accept="image/*,.pdf" style="display: none;">
+                    <button class="btn" onclick="document.getElementById('sign-upload').click()">Select File</button>
+                </div>
+                
+                <div class="settings-panel" id="sign-settings" style="display: none;">
+                    <h3 class="settings-title">Signature Options</h3>
+                    
+                    <div class="form-group">
+                        <label>Create Signature:</label>
+                        <div style="display: flex; gap: 1rem;">
+                            <button class="btn btn-secondary" id="draw-signature-btn">Draw Signature</button>
+                            <button class="btn btn-secondary" id="upload-signature-btn">Upload Signature</button>
+                            <button class="btn btn-secondary" id="type-signature-btn">Type Signature</button>
+                        </div>
+                    </div>
+                    
+                    <div id="draw-signature-panel" style="display: none; margin-top: 1rem;">
+                        <canvas id="signature-canvas" width="400" height="200" style="border: 1px solid #ddd; background: white; cursor: crosshair;"></canvas>
+                        <div style="margin-top: 1rem;">
+                            <button class="btn btn-secondary" id="clear-signature-btn">Clear</button>
+                            <button class="btn" id="save-signature-btn">Save Signature</button>
+                        </div>
+                    </div>
+                    
+                    <div id="upload-signature-panel" style="display: none; margin-top: 1rem;">
+                        <input type="file" id="signature-upload" accept="image/*" style="margin-bottom: 1rem;">
+                        <button class="btn" id="save-uploaded-signature-btn">Save Signature</button>
+                    </div>
+                    
+                    <div id="type-signature-panel" style="display: none; margin-top: 1rem;">
+                        <input type="text" id="signature-text" placeholder="Enter your name" style="margin-bottom: 1rem;">
+                        <div class="form-group">
+                            <label for="signature-font">Font Style:</label>
+                            <select id="signature-font">
+                                <option value="'Dancing Script', cursive">Dancing Script</option>
+                                <option value="'Great Vibes', cursive">Great Vibes</option>
+                                <option value="'Parisienne', cursive">Parisienne</option>
+                                <option value="'Allura', cursive">Allura</option>
+                                <option value="'Brush Script MT', cursive">Brush Script</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature-color">Color:</label>
+                            <input type="color" id="signature-color" value="#000000">
+                        </div>
+                        <button class="btn" id="save-typed-signature-btn">Save Signature</button>
+                    </div>
+                    
+                    <div id="signature-position-panel" style="margin-top: 1rem; display: none;">
+                        <div class="form-group">
+                            <label for="signature-position">Position:</label>
+                            <select id="signature-position">
+                                <option value="bottom-right">Bottom Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                                <option value="top-right">Top Right</option>
+                                <option value="top-left">Top Left</option>
+                                <option value="center">Center</option>
+                                <option value="custom">Custom Position</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="custom-position-group" style="display: none;">
+                            <label>Custom Position:</label>
+                            <div style="display: flex; gap: 1rem;">
+                                <input type="number" id="signature-x" placeholder="X" min="0" style="flex: 1;">
+                                <input type="number" id="signature-y" placeholder="Y" min="0" style="flex: 1;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature-size">Size:</label>
+                            <input type="range" id="signature-size" min="10" max="200" value="50" step="1">
+                            <span id="signature-size-value">50%</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="signature-opacity">Opacity: <span id="signature-opacity-value">100</span>%</label>
+                            <input type="range" id="signature-opacity" min="10" max="100" value="100" step="1">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="sign-preview-container" style="display: none;">
+                    <div class="preview-container">
+                        <div class="preview-box">
+                            <h3 class="preview-title">Original Document</h3>
+                            <div class="file-info" id="original-sign-info"></div>
+                            <img id="original-sign-preview" class="preview-image" src="" alt="Original Document" style="max-height: 500px;">
+                            <iframe id="original-sign-pdf-preview" class="preview-image" style="width: 100%; height: 500px; border: 1px solid #ddd; display: none;"></iframe>
+                        </div>
+                        <div class="preview-box">
+                            <h3 class="preview-title">Document with Signature</h3>
+                            <div class="file-info" id="signed-doc-info"></div>
+                            <img id="signed-doc-preview" class="preview-image" src="" alt="Document with Signature" style="max-height: 500px;">
+                            <iframe id="signed-pdf-preview" class="preview-image" style="width: 100%; height: 500px; border: 1px solid #ddd; display: none;"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" id="sign-another-btn">Sign Another Document</button>
+                        <button class="btn" id="download-signed-btn">Download Signed Document</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Middle Ad Banner -->
+        <div class="ad-banner">
+            <!-- Replace with your AdSense code -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7384639868183712"
+                crossorigin="anonymous"></script>
+            <!-- Middle Rectangle Ad -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-7384639868183712"
+                data-ad-slot="YOUR_AD_SLOT_ID"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!-- Features Section -->
+        <section id="features" style="background-color: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 2rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Powerful Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <i class="fas fa-compress-alt" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Image Compression</h3>
+                    <p>Reduce image file sizes without noticeable quality loss. Perfect for websites and social media.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-file-pdf" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>PDF Editing</h3>
+                    <p>Merge, split, compress, and rotate PDF documents with ease.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-exchange-alt" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Image Conversion</h3>
+                    <p>Convert between JPG, PNG, WebP, and other popular image formats.</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-signature" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem;"></i>
+                    <h3>Digital Signatures</h3>
+                    <p>Add signatures to documents and images with customizable options.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section id="how-it-works" style="background-color: white; padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--box-shadow); margin-bottom: 2rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="background-color: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">1</div>
+                    <h3>Upload Your File</h3>
+                    <p>Drag and drop your file or click to browse your computer.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background-color: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">2</div>
+                    <h3>Adjust Settings</h3>
+                    <p>Customize the compression, conversion, or editing options.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background-color: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">3</div>
+                    <h3>Process & Preview</h3>
+                    <p>See the results before downloading your file.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="background-color: var(--primary-color); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">4</div>
+                    <h3>Download</h3>
+                    <p>
